@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe6ee;
+    color: #4a1f2d;
+    text-align: center;
+}
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ff9eb5, #ffd1dc);
+}
+
+.coracoes {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.inicio p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #e91e63;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #c2185b;
+}
+
+.conteudo {
+    padding: 70px 20px;
+}
+
+.contador {
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#tempo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.galeria {
+    max-width: 1000px;
+    margin: 30px auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+.mensagem {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mensagem p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
