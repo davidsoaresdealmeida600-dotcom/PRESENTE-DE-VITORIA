@@ -36,3 +36,31 @@ function atualizarContador() {
 setInterval(atualizarContador, 1000);
 
 atualizarContador();
+
+/* =========================
+   MÚSICA
+========================= */
+
+const musica = document.getElementById("musica");
+
+const botaoMusica = document.getElementById("botaoMusica");
+
+
+botaoMusica.addEventListener("click", () => {
+
+    if (musica.paused) {
+
+        musica.play();
+
+        botaoMusica.textContent = "⏸️ Pausar música";
+
+    } else {
+
+        musica.pause();
+
+        botaoMusica.textContent = "🎵 Tocar música";
+
+    }
+
+});
+
