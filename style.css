@@ -50,7 +50,70 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    background: linear-gradient(135deg, #ff9eb5, #ffd1dc);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #fff7fa;
+    text-shadow: 0 2px 10px rgba(42, 6, 28, 0.6);
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 181, 211, 0.52), transparent 31%),
+        radial-gradient(circle at 85% 85%, rgba(177, 123, 205, 0.43), transparent 34%),
+        linear-gradient(135deg, #351324, #6b254d 55%, #2b183c);
+}
+
+.memorias-inicio {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.memorias-inicio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(35, 9, 25, 0.70), rgba(78, 23, 57, 0.45));
+    backdrop-filter: blur(2px);
+}
+
+.foto-fundo {
+    position: absolute;
+    width: clamp(130px, 17vw, 245px);
+    aspect-ratio: 3 / 4;
+    border: 7px solid rgba(255, 255, 255, 0.72);
+    border-radius: 9px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 18px 42px rgba(18, 2, 12, 0.48);
+    opacity: 0.55;
+}
+
+.fundo-1 {
+    top: 4%; left: 4%; transform: rotate(-10deg);
+    background-image: url("fotos/foto5.jpg");
+}
+
+.fundo-2 {
+    top: 6%; right: 5%; transform: rotate(9deg);
+    background-image: url("fotos/foto6.jpg");
+}
+
+.fundo-3 {
+    bottom: 4%; left: 11%; transform: rotate(8deg);
+    background-image: url("fotos/IMG-20260621-WA0005.jpg");
+}
+
+.fundo-4 {
+    width: clamp(130px, 16vw, 225px);
+    right: 4%; bottom: 4%; transform: rotate(-8deg);
+    background-image: url("fotos/IMG-20260621-WA0010.jpg");
+}
+
+@media (max-width: 620px) {
+    .foto-fundo { width: 112px; border-width: 5px; }
+    .fundo-1 { left: 2%; top: 3%; }
+    .fundo-2 { right: 2%; top: 4%; }
+    .fundo-3 { left: 3%; bottom: 3%; }
+    .fundo-4 { width: 102px; right: 2%; bottom: 3%; }
 }
 
 .coracoes {
@@ -74,6 +137,12 @@ h2 {
     margin-bottom: 30px;
 }
 
+/* Parágrafo com o mesmo destaque visual de um h2. */
+.inicio .texto-intro {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 button {
     border: none;
     padding: 15px 30px;
@@ -92,6 +161,15 @@ button:hover {
 
 .conteudo {
     padding: 70px 20px;
+}
+
+/* Mantém o parágrafo no fluxo normal, com o destaque de um h2. */
+.conteudo .texto-destaque {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.45;
+    margin: 0 auto 30px;
+    max-width: 700px;
 }
 
 .contador {
