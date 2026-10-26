@@ -38,12 +38,25 @@
 
     <section id="surpresa" class="conteudo">
 
-        <h2>Nosso amor ❤️</h2>
+        <h1>Nossa história </h1>
 
+        <details class="carta-historia">
+            <summary class="carta-envelope">
+                <span class="envelope-aba" aria-hidden="true"></span>
+                <span class="envelope-selo" aria-hidden="true">♥</span>
+                <span class="envelope-destino">Nossa história em uma carta</span>
+                <span class="carta-abrir">Clique para abrir 💌</span>
+                <span class="carta-fechar">Clique para fechar a carta</span>
+            </summary>
+            <div class="carta-papel">
         <p class="texto-destaque">
             Desde o dia 4 de Setenbro de 2025,
-             minha vida ficou ainda mais especial quando agente teve nossa primeira comversa.
+             minha vida ficou ainda mais especial quando agente teve nossa primeira comversa. De lá pra cá, muitas coisas aconteceram, muitas lembranças foram criadas e cada momento ao seu lado se tornou único. É no dia 17 de dezembro de 2025 que agente oficializou nosso namoro, e desde então, cada dia ao seu lado é uma nova aventura.
+             É no seu sorriso que encontro a minha felicidade e no seu abraço que encontro o meu lar.
         </p>
+                <span class="carta-coracao" aria-hidden="true">♥</span>
+            </div>
+        </details>
 
 
         <div class="contador">
@@ -55,7 +68,8 @@
             </div>
 
         </div>
-        
+        <!-- CORAÇÕES FLUTUANTES -->
+  <div id="coracoes-flutuantes" aria-hidden="true"></div>
            <!-- Botão da música -->
     <button id="botaoMusica" class="musica-btn">
         🎵 Tocar música
@@ -69,22 +83,58 @@
         <h2>Nossos momentos 📸</h2>
 
         <div class="galeria">
+            <button class="polaroid" type="button" data-foto="fotos/foto1.jpg"><img src="fotos/foto1.jpg" alt="Nosso momento 1"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto2.jpg"><img src="fotos/foto2.jpg" alt="Nosso momento 2"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto3.jpg"><img src="fotos/foto3.jpg" alt="Nosso momento 3"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto4.jpg"><img src="fotos/foto4.jpg" alt="Nosso momento 4"><span>~♡~♡~</span></button>
+         <div class="mensagem">
 
-            <img src="fotos/foto1.jpg" alt="Nossa foto">
-            <img src="fotos/foto2.jpg" alt="Nossa foto">
-            <img src="fotos/foto3.jpg" alt="Nossa foto">
-            <img src="fotos/foto4.jpg" alt="Nossa foto">
+            <h2>~♡~♡~♡~♡~
+                ♡~♡~♡~♡~</h2>
 
-            <img src="fotos/foto5.jpg" alt="Nossa foto">
-            <img src="fotos/foto6.jpg" alt="Nossa foto">
-            <img src="fotos/foto7.jpg" alt="Nossa foto">
-            <img src="fotos/foto8.jpg" alt="Nossa foto">
+            <p>
+                 Eu quero que você saiba que cada instante com você é precioso e que eu valorizo cada segundo que passamos juntos.
+            </p>
 
-            <img src="fotos/foto9.jpg" alt="Nossa foto">
-            <img src="fotos/foto10.jpg" alt="Nossa foto">
-            <img src="fotos/foto11.jpg" alt="Nossa foto">
-            <img src="fotos/foto12.jpg" alt="Nossa foto">
+            <p>
+                ...
+            </p>
 
+        </div>
+            <button class="polaroid" type="button" data-foto="fotos/foto5.jpg"><img src="fotos/foto5.jpg" alt="Nosso momento 5"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto6.jpg"><img src="fotos/foto6.jpg" alt="Nosso momento 6"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto7.jpg"><img src="fotos/foto7.jpg" alt="Nosso momento 7"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto8.jpg"><img src="fotos/foto8.jpg" alt="Nosso momento 8"><span>~♡~♡~</span></button>
+         <div class="mensagem">
+
+            <h2>...</h2>
+
+            <p>
+                ...
+            </p>
+
+        </div>
+            <button class="polaroid" type="button" data-foto="fotos/foto9.jpg"><img src="fotos/foto9.jpg" alt="Nosso momento 9"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto10.jpg"><img src="fotos/foto10.jpg" alt="Nosso momento 10"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto11.jpg"><img src="fotos/foto11.jpg" alt="Nosso momento 11"><span>~♡~♡~</span></button>
+            <button class="polaroid" type="button" data-foto="fotos/foto12.jpg"><img src="fotos/foto12.jpg" alt="Nosso momento 12"><span>~♡~♡~</span></button>
+         <div class="mensagem">
+
+            <h2>...</h2>
+
+            <p>
+                ..
+            </p>
+        </div>
+
+            
+        </div>
+
+        <div class="lightbox" id="lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Foto ampliada">
+            <button class="lightbox-fechar" type="button" aria-label="Fechar foto"> × </button>
+            <button class="lightbox-nav anterior" type="button" aria-label="Foto anterior"> ‹ </button>
+            <img class="lightbox-imagem" src="" alt="">
+            <button class="lightbox-nav proxima" type="button" aria-label="Próxima foto"> › </button>
         </div>
 
 
@@ -104,6 +154,8 @@
 
         </div>
 
+
+        
     </section>
 
 

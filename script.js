@@ -64,3 +64,103 @@ botaoMusica.addEventListener("click", () => {
 
 });
 
+const lightbox = document.getElementById("lightbox");
+const imagemAmpliada = document.querySelector(".lightbox-imagem");
+const polaroids = [...document.querySelectorAll(".polaroid")];
+let fotoAtual = 0;
+
+function abrirLightbox(indice) {
+    fotoAtual = indice;
+    const polaroid = polaroids[fotoAtual];
+    imagemAmpliada.src = polaroid.dataset.foto;
+    imagemAmpliada.alt = polaroid.querySelector("img").alt;
+    lightbox.classList.add("aberto");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-ativa");
+    document.querySelector(".lightbox-fechar").focus();
+}
+
+function fecharLightbox() {
+    lightbox.classList.remove("aberto");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-ativa");
+    polaroids[fotoAtual].focus();
+}
+
+function navegarLightbox(direcao) {
+    abrirLightbox((fotoAtual + direcao + polaroids.length) % polaroids.length);
+}
+
+polaroids.forEach((polaroid, indice) => polaroid.addEventListener("click", () => abrirLightbox(indice)));
+document.querySelector(".lightbox-fechar").addEventListener("click", fecharLightbox);
+document.querySelector(".anterior").addEventListener("click", () => navegarLightbox(-1));
+document.querySelector(".proxima").addEventListener("click", () => navegarLightbox(1));
+
+lightbox.addEventListener("click", (evento) => {
+    if (evento.target === lightbox) fecharLightbox();
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (!lightbox.classList.contains("aberto")) return;
+    if (evento.key === "Escape") fecharLightbox();
+    if (evento.key === "ArrowLeft") navegarLightbox(-1);
+    if (evento.key === "ArrowRight") navegarLightbox(1);
+});
+/* =========================
+   CORAÇÕES FLUTUANTES
+========================= */
+
+const areaCoracoes = document.getElementById(
+    "coracoes-flutuantes"
+);
+
+const tiposCoracoes = [
+    "❤️",
+    "💕",
+    "💖",
+    "💗",
+    "💓"
+];
+
+function criarCoracao() {
+
+    const coracao = document.createElement("span");
+
+    coracao.classList.add("coracao-flutuante");
+
+    // Escolhe um coração aleatório
+    const indice = Math.floor(
+        Math.random() * tiposCoracoes.length
+    );
+
+    coracao.textContent = tiposCoracoes[indice];
+
+    // Posição horizontal aleatória
+    coracao.style.left = Math.random() * 100 + "%";
+
+    // Tamanho aleatório
+    coracao.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    // Velocidade aleatória
+    const duracao = 5 + Math.random() * 5;
+
+    coracao.style.animationDuration = duracao + "s";
+
+    // Adiciona o coração na tela
+    areaCoracoes.appendChild(coracao);
+
+    // Remove o coração depois da animação
+    coracao.addEventListener("animationend", () => {
+        coracao.remove();
+    });
+
+}
+
+// Cria um coração a cada 600 milissegundos
+if (
+    areaCoracoes &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+    setInterval(criarCoracao, 500);
+}

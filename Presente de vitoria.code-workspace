@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../quiz"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "quiz"
+	}
+}
