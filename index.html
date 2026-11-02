@@ -61,13 +61,48 @@
 
         <div class="contador">
 
-            <h2> Data de namoro:</h2>
+            <span class="contador-coracao" aria-hidden="true">♥</span>
+            <p class="contador-legenda"></p>
+            <h2>Nosso tempo juntos</h2>
+            <p class="contador-data">Desde <time datetime="2025-12-17T19:00:00">17 de dezembro de 2025</time></p>
 
-            <div id="tempo">
-                Calculando...
+            <div id="tempo" role="group" aria-label="Tempo de namoro">
+                <div class="tempo-bloco"><span id="tempo-anos" class="tempo-numero">00</span><span class="tempo-unidade">anos</span></div>
+                <div class="tempo-bloco"><span id="tempo-dias" class="tempo-numero">00</span><span class="tempo-unidade">dias</span></div>
+                <div class="tempo-bloco"><span id="tempo-horas" class="tempo-numero">00</span><span class="tempo-unidade">horas</span></div>
+                <div class="tempo-bloco"><span id="tempo-minutos" class="tempo-numero">00</span><span class="tempo-unidade">minutos</span></div>
+                <div class="tempo-bloco"><span id="tempo-segundos" class="tempo-numero">00</span><span class="tempo-unidade">segundos</span></div>
             </div>
+            <p class="contador-frase">E uma vida inteira para continuar contando.</p>
 
         </div>
+        <section class="jardim" aria-labelledby="jardim-titulo">
+            <p class="jardim-legenda">UM AMOR QUE FLORESCE</p>
+            <h2 id="jardim-titulo">O nosso jardim do amor</h2>
+            <p>Vitória, cada pétala guarda um motivo pelo qual eu te amo.</p>
+            <div class="tulipa-cenario">
+                <span class="tulipa-caule" aria-hidden="true"></span>
+                <span class="tulipa-folha folha-esquerda" aria-hidden="true"></span>
+                <span class="tulipa-folha folha-direita" aria-hidden="true"></span>
+                <div class="tulipa-flor" id="tulipa-flor">
+                    <button class="tulipa-petala" style="--angulo: -56deg" type="button" aria-label="Seu sorriso" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: -40deg" type="button" aria-label="Seu carinho" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: -24deg" type="button" aria-label="Seu jeitinho" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: -8deg" type="button" aria-label="Nossas conversas" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: 8deg" type="button" aria-label="Os momentos juntos" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: 24deg" type="button" aria-label="Seu abraço" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: 40deg" type="button" aria-label="Sua companhia" hidden></button>
+                    <button class="tulipa-petala" style="--angulo: 56deg" type="button" aria-label="Nosso futuro" hidden></button>
+                    <button class="tulipa-botao" id="tulipa-botao" type="button" aria-label="Fazer a tulipa florescer" aria-expanded="false">♥</button>
+                </div>
+            </div>
+            <p class="jardim-instrucao" id="jardim-instrucao">Toque na tulipa e veja o nosso amor florescer.</p>
+            <div class="jardim-mensagem" aria-live="polite" aria-atomic="true">
+                <h3 id="motivo-titulo">Uma flor, tantos motivos…</h3>
+                <p id="motivo-texto">Este pequeno jardim é todo seu, meu amor.</p>
+            </div>
+            <p class="jardim-progresso" id="jardim-progresso"></p>
+        </section>
         <!-- CORAÇÕES FLUTUANTES -->
   <div id="coracoes-flutuantes" aria-hidden="true"></div>
            <!-- Botão da música -->
@@ -89,16 +124,14 @@
             <button class="polaroid" type="button" data-foto="fotos/foto4.jpg"><img src="fotos/foto4.jpg" alt="Nosso momento 4"><span>~♡~♡~</span></button>
          <div class="mensagem">
 
-            <h2>~♡~♡~♡~♡~
-                ♡~♡~♡~♡~</h2>
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
 
             <p>
                  Eu quero que você saiba que cada instante com você é precioso e que eu valorizo cada segundo que passamos juntos.
             </p>
+            
 
-            <p>
-                ...
-            </p>
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
 
         </div>
             <button class="polaroid" type="button" data-foto="fotos/foto5.jpg"><img src="fotos/foto5.jpg" alt="Nosso momento 5"><span>~♡~♡~</span></button>
@@ -107,11 +140,15 @@
             <button class="polaroid" type="button" data-foto="fotos/foto8.jpg"><img src="fotos/foto8.jpg" alt="Nosso momento 8"><span>~♡~♡~</span></button>
          <div class="mensagem">
 
-            <h2>...</h2>
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
 
             <p>
                 ...
             </p>
+            
+
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
+
 
         </div>
             <button class="polaroid" type="button" data-foto="fotos/foto9.jpg"><img src="fotos/foto9.jpg" alt="Nosso momento 9"><span>~♡~♡~</span></button>
@@ -120,11 +157,16 @@
             <button class="polaroid" type="button" data-foto="fotos/foto12.jpg"><img src="fotos/foto12.jpg" alt="Nosso momento 12"><span>~♡~♡~</span></button>
          <div class="mensagem">
 
-            <h2>...</h2>
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
 
             <p>
-                ..
+                ...
             </p>
+            
+
+            <h2>~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~♡~</h2>
+
+
         </div>
 
             
