@@ -1,4 +1,4 @@
-function mostrarSurpresa() {
+﻿function mostrarSurpresa() {
 
     document.getElementById("surpresa").scrollIntoView({
         behavior: "smooth"
@@ -49,33 +49,56 @@ setInterval(atualizarContador, 1000);
 
 atualizarContador();
 
-/* =========================
-   MÚSICA
-========================= */
+const playlistAudio = document.getElementById("playlist-audio");
+const playlistStatus = document.getElementById("playlist-status");
+const faixasPlaylist = [...document.querySelectorAll(".faixa-botao")];
+let faixaAtiva = null;
 
-const musica = document.getElementById("musica");
-
-const botaoMusica = document.getElementById("botaoMusica");
-
-
-botaoMusica.addEventListener("click", () => {
-
-    if (musica.paused) {
-
-        musica.play();
-
-        botaoMusica.textContent = "⏸️ Pausar música";
-
-    } else {
-
-        musica.pause();
-
-        botaoMusica.textContent = "🎵 Tocar música";
-
-    }
-
+playlistAudio.addEventListener("play", () => {
+    if (faixaAtiva) faixaAtiva.querySelector(".faixa-tocar").textContent = "Ⅱ";
 });
 
+playlistAudio.addEventListener("pause", () => {
+    if (faixaAtiva) faixaAtiva.querySelector(".faixa-tocar").textContent = "▶";
+});
+
+faixasPlaylist.forEach((faixa) => {
+    faixa.addEventListener("click", async () => {
+        const mesmaFaixa = playlistAudio.src.endsWith(faixa.dataset.src);
+        if (mesmaFaixa && !playlistAudio.paused) {
+            playlistAudio.pause();
+            playlistStatus.textContent = `Pausado: ${faixa.dataset.title}`;
+            return;
+        }
+
+        if (!mesmaFaixa) playlistAudio.src = faixa.dataset.src;
+        faixaAtiva = faixa;
+        faixasPlaylist.forEach((item) => {
+            item.classList.toggle("tocando", item === faixa);
+            if (item !== faixa) item.querySelector(".faixa-tocar").textContent = "›";
+        });
+        try {
+            await playlistAudio.play();
+            playlistStatus.textContent = `Tocando agora: ${faixa.dataset.title}`;
+        } catch {
+            playlistStatus.textContent = `Não foi possível tocar ${faixa.dataset.title}. Confira se o arquivo está disponível.`;
+        }
+    });
+});
+
+playlistAudio.addEventListener("ended", () => {
+    const indiceAtual = faixasPlaylist.findIndex((faixa) => faixa.classList.contains("tocando"));
+    if (indiceAtual >= 0 && indiceAtual + 1 < faixasPlaylist.length) {
+        faixasPlaylist[indiceAtual + 1].click();
+    } else {
+        playlistStatus.textContent = "A playlist terminou. ♡";
+        faixaAtiva = null;
+        faixasPlaylist.forEach((faixa) => {
+            faixa.classList.remove("tocando");
+            faixa.querySelector(".faixa-tocar").textContent = "›";
+        });
+    }
+});
 const lightbox = document.getElementById("lightbox");
 const imagemAmpliada = document.querySelector(".lightbox-imagem");
 const polaroids = [...document.querySelectorAll(".polaroid")];
@@ -130,8 +153,8 @@ const tiposCoracoes = [
     "❤️",
     "💕",
     "💖",
-    "💗",
-    "💓"
+    "🤍",
+    "❣️"
 ];
 
 function criarCoracao() {
@@ -173,13 +196,13 @@ const tulipaBotao = document.getElementById("tulipa-botao");
 const petalas = [...document.querySelectorAll(".tulipa-petala")];
 const motivos = [
     ["Seu sorriso", "Porque o seu sorriso ilumina meus dias e faz tudo ficar mais bonito."],
-    ["Seu carinho", "Porque no seu carinho eu encontro paz, cuidado e um lugar para chamar de lar."],
+    ["seu cabelo", "porque seus cachinhos são a minha perdição e me fazem te amar cada vez mais."],
     ["Seu jeitinho", "Porque cada detalhe do seu jeitinho me faz me apaixonar por você de novo."],
-    ["Nossas conversas", "Porque conversar com você transforma até um dia comum em um momento especial."],
-    ["Os momentos juntos", "Porque ao seu lado as pequenas coisas viram as minhas melhores lembranças."],
+    ["seu olhar", "Porque sempre me deixa mais apaixonado a cada olhar."],
+    ["seu rostinho", "porque adoro apertar ele, principalmente quando você fica com vergonha."],
     ["Seu abraço", "Porque seu abraço é o meu lugar favorito para descansar e esquecer do mundo."],
     ["Sua companhia", "Porque ter você por perto deixa a vida mais leve e o meu coração mais feliz."],
-    ["Nosso futuro", "Porque imaginar os nossos sonhos se realizando juntos me dá mais um motivo para sorrir."]
+    ["seu beijo", "Porque cada beijo seu é uma explosão de amor e carinho que me faz sentir completo."]
 ];
 const motivosDescobertos = new Set();
 
@@ -223,3 +246,4 @@ if (
 ) {
     setInterval(criarCoracao, 500);
 }
+

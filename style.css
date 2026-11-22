@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,6 +47,75 @@ body::before {
 
     transition: 0.3s;
 }
+
+/* Playlist romântica */
+.playlist {
+    max-width: 780px;
+    margin: 64px auto;
+    padding: clamp(26px, 5vw, 48px);
+    border: 1px solid #f3d5df;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #fffdfb, #fff0f5);
+    box-shadow: 0 18px 48px #74234220;
+    text-align: left;
+    scroll-margin-top: 90px;
+}
+.playlist-legenda { color: #a34664; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-align: center; }
+.playlist h2 { margin: 10px 0; color: #792c48; font: bold clamp(27px, 5vw, 38px) Georgia, serif; text-align: center; }
+.playlist-intro, .playlist-final { margin: 0 auto 24px; color: #895365; line-height: 1.7; text-align: center; }
+.playlist-contagem { width: fit-content; margin: 0 auto 16px; padding: 7px 13px; border: 1px solid #f1d5df; border-radius: 30px; background: #fff8fa; color: #a34664; font-size: 12px; font-weight: bold; }
+.playlist-lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; list-style: none; }
+.playlist-lista li { display: grid; min-width: 0; align-content: start; gap: 7px; }
+.faixa-botao { width: 100%; display: flex; min-height: 68px; align-items: center; gap: 11px; padding: 8px 11px; border: 1px solid #f2dce4; border-radius: 15px; background: #ffffffc9; color: inherit; text-align: left; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.faixa-botao:hover, .faixa-botao:focus-visible, .faixa-botao.tocando { transform: translateY(-2px); background: #fff; box-shadow: 0 8px 20px #8b25451a; outline: 2px solid #d68ca4; outline-offset: 2px; }
+.faixa-capa { display: grid; width: 48px; height: 48px; flex: 0 0 48px; place-items: center; overflow: hidden; border: 1px solid #fff; border-radius: 9px; color: #fffaf7; font: 25px Georgia, serif; text-shadow: 0 2px 6px #54213655; box-shadow: 0 3px 8px #74234222, inset 0 1px #ffffff90; }
+.capa-1, .capa-9, .capa-15 { background: radial-gradient(circle at 30% 25%, #ffd4dc, transparent 40%), linear-gradient(145deg, #a84e70, #e295a9); }
+.capa-2, .capa-10, .capa-16 { background: radial-gradient(circle at 75% 20%, #ffe9c7, transparent 38%), linear-gradient(145deg, #df9c88, #a94968); }
+.capa-3, .capa-11 { background: radial-gradient(circle at 25% 80%, #f9e4ba, transparent 40%), linear-gradient(145deg, #9d7d91, #d77f9a); }
+.capa-4, .capa-12 { background: radial-gradient(circle at 70% 25%, #fff1dc, transparent 38%), linear-gradient(145deg, #b96f84, #e8a0ae); }
+.capa-5, .capa-13 { background: radial-gradient(circle at 25% 20%, #ffe6f0, transparent 40%), linear-gradient(145deg, #765a78, #c17691); }
+.capa-6, .capa-14 { background: radial-gradient(circle at 70% 75%, #f8dbaa, transparent 38%), linear-gradient(145deg, #b36665, #e2a084); }
+.capa-7 { background: radial-gradient(circle at 25% 75%, #ffe4e9, transparent 38%), linear-gradient(145deg, #935569, #d8879a); }
+.capa-8 { background: radial-gradient(circle at 70% 25%, #d5f0ef, transparent 38%), linear-gradient(145deg, #69868c, #b78da0); }
+.playlist-player { display: grid; gap: 10px; margin: 24px 0; padding: 18px; border: 1px solid #f0d3de; border-radius: 20px; background: linear-gradient(145deg, #fffafd, #fce8ef); box-shadow: 0 9px 24px #8b254512, inset 0 1px #fff; text-align: center; }
+.player-identidade { display: flex; align-items: center; justify-content: center; gap: 9px; color: #8c3453; }
+.player-identidade span { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #d4809b, #a84266); color: #fff8f8; font-size: 17px; box-shadow: 0 3px 9px #8b254526; }
+.player-identidade strong { font: bold 16px Georgia, serif; }
+.playlist-player p { color: #895365; font-size: 13px; }
+.playlist-player audio { width: 100%; height: 42px; accent-color: #a84266; color-scheme: light; border-radius: 24px; }
+.playlist-player audio::-webkit-media-controls-panel { background: linear-gradient(135deg, #fff8fa, #f5dce5); }
+.playlist-player audio::-webkit-media-controls-current-time-display,
+.playlist-player audio::-webkit-media-controls-time-remaining-display { color: #79314d; }
+.faixa-numero { color: #bb7189; font: 13px Georgia, serif; }
+.faixa-info { display: grid; gap: 4px; min-width: 0; }
+.faixa-info strong { overflow: hidden; color: #6b2e47; font-size: 14px; text-overflow: ellipsis; white-space: nowrap; }
+.faixa-info small { display: -webkit-box; overflow: hidden; color: #98717e; font-size: 10px; line-height: 1.2; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+.faixa-frase { position: relative; min-height: 39px; padding: 9px 11px 9px 29px; border: 1px solid #f2dce4; border-radius: 12px; background: linear-gradient(145deg, #fffdfd, #fff5f8); box-shadow: 0 3px 9px #7423420a, inset 0 1px #fff; color: #805564; font-size: 11px; line-height: 1.4; }
+.faixa-frase::before { position: absolute; top: 8px; left: 10px; color: #c27791; content: "♡"; font-size: 13px; }
+.faixa-tocar { display: grid; width: 25px; height: 30px; flex: 0 0 25px; place-items: center; margin-left: auto; color: #a33d60; font: 28px/1 Arial, sans-serif; }
+.faixa-botao.tocando .faixa-capa { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #c66b88; }
+.playlist-final { margin: 24px auto 0; font-family: Georgia, serif; font-style: italic; }
+@media (max-width: 560px) { .playlist { margin: 40px 14px; padding: 26px 18px; } .playlist-lista { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .faixa-botao { transition: none; } }
+
+.musica-especial {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    max-width: 620px;
+    margin: -28px auto 64px;
+    padding: clamp(24px, 5vw, 38px);
+    border: 1px solid #f3d5df;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #fffdfb, #fff0f5);
+    box-shadow: 0 14px 38px #74234218;
+    text-align: center;
+}
+.musica-especial-legenda { color: #a34664; font-size: 10px; font-weight: bold; letter-spacing: 2px; }
+.musica-especial h2 { color: #792c48; font: bold clamp(26px, 5vw, 34px) Georgia, serif; }
+.musica-especial-artista { margin-top: -8px; color: #98717e; font-size: 13px; }
+.musica-especial audio { width: min(100%, 440px); height: 42px; accent-color: #a84266; color-scheme: light; }
+.musica-especial-texto { max-width: 470px; margin-top: 4px; color: #895365; font: italic 15px/1.8 Georgia, serif; }
 
 .musica-btn:hover {
     transform: scale(1.05);
@@ -100,23 +169,23 @@ body::before {
 
 .fundo-1 {
     top: 4%; left: 4%; transform: rotate(-10deg);
-    background-image: url("fotos/foto5.jpg");
+    background-image: url("fotos/foto1.jpg");
 }
 
 .fundo-2 {
     top: 6%; right: 5%; transform: rotate(9deg);
-    background-image: url("fotos/foto6.jpg");
+    background-image: url("fotos/foto2.jpg");
 }
 
 .fundo-3 {
     bottom: 4%; left: 11%; transform: rotate(8deg);
-    background-image: url("fotos/IMG-20260621-WA0005.jpg");
+    background-image: url("fotos/foto3.jpg");
 }
 
 .fundo-4 {
     width: clamp(130px, 16vw, 225px);
     right: 4%; bottom: 4%; transform: rotate(-8deg);
-    background-image: url("fotos/IMG-20260621-WA0010.jpg");
+    background-image: url("fotos/foto4.jpg");
 }
 
 @media (max-width: 620px) {
@@ -219,10 +288,22 @@ button:hover {
     height: 64px;
     margin-bottom: 18px;
     border-radius: 50%;
-    background: #b8325c;
-    color: #fff3f6;
-    font-size: 36px;
-    box-shadow: 0 4px 12px #b8325c40;
+    background: radial-gradient(circle at 32% 25%, #f68aa8 0, #d94c76 42%, #a9214b 100%);
+    color: #fff;
+    font-size: 39px;
+    text-shadow: 0 2px 4px rgba(105, 20, 48, 0.35);
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.45), 0 5px 14px rgba(184, 50, 92, 0.42);
+}
+
+/* O coração do selo pulsa suavemente para dar vida à carta. */
+.envelope-selo {
+    animation: pulsarSelo 1.8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes pulsarSelo {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(184, 50, 92, 0)); }
+    50% { transform: scale(1.14); filter: drop-shadow(0 0 7px rgba(184, 50, 92, 0.55)); }
 }
 
 .envelope-destino {
@@ -263,6 +344,7 @@ button:hover {
 @media (prefers-reduced-motion: reduce) {
     .carta-papel { animation: none; }
     .carta-envelope, .envelope-aba { transition: none; }
+    .envelope-selo { animation: none; }
 }
 
 .contador {
@@ -644,3 +726,178 @@ body.lightbox-ativa { overflow: hidden; }
 .jardim-mensagem { background: linear-gradient(145deg, #ffffffeb, #fff8f9); border-color: #f0d5de; border-radius: 22px; box-shadow: 0 8px 24px #8b254509, inset 0 1px #fff; }
 .jardim-mensagem h3 { color: #933452; }
 .jardim-progresso { font-size: 12px; letter-spacing: .3px; }
+
+
+/* Cartão das mensagens do jardim: acabamento visual, sem alterar o conteúdo. */
+.jardim-mensagem {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 28px;
+    border-radius: 24px;
+    background: radial-gradient(ellipse at 50% 0%, #fff0f5 0, transparent 62%), linear-gradient(145deg, #fff 0%, #fff9fa 100%);
+    box-shadow: 0 12px 30px #8b254511, inset 0 1px 0 #fff;
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+.jardim-mensagem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 56%;
+    height: 3px;
+    border-radius: 0 0 99px 99px;
+    background: linear-gradient(90deg, transparent, #e9a4b8, transparent);
+}
+.jardim-mensagem h3 {
+    margin-bottom: 0;
+    color: #8f3553;
+    font-size: clamp(22px, 4vw, 26px);
+    line-height: 1.35;
+}
+.jardim-mensagem h3::after {
+    content: "\2665";
+    display: block;
+    margin: 12px auto 14px;
+    color: #d58aa1;
+    font: 13px Georgia, serif;
+}
+.jardim-mensagem p {
+    max-width: 430px;
+    margin: 0 auto;
+    color: #76515d;
+    font-size: 15px;
+    line-height: 1.9;
+}
+@media (hover: hover) {
+    .jardim-mensagem:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px #8b25451a, inset 0 1px 0 #fff;
+    }
+}
+@media (max-width: 480px) {
+    .jardim-mensagem { padding: 25px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .jardim-mensagem { transition: none; }
+}
+
+
+/* Acabamento dos cartões da galeria e da mensagem final. */
+.galeria > .mensagem,
+.conteudo > .mensagem {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f1d9e1;
+    border-radius: 24px;
+    background: radial-gradient(ellipse at 50% 0%, #fff0f5 0, transparent 62%), linear-gradient(145deg, #fff 0%, #fff9fa 100%);
+    box-shadow: 0 12px 30px #8b254511, inset 0 1px 0 #fff;
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+/* Encerramento em forma de carta para o presente. */
+.conteudo > .mensagem-final {
+    max-width: 820px;
+    margin: 68px auto 24px;
+    padding: clamp(34px, 7vw, 68px) clamp(24px, 7vw, 76px);
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, #ffe8ef 0, transparent 48%), linear-gradient(145deg, #fff 0%, #fff8f5 100%);
+    box-shadow: 0 22px 55px #7423421c, inset 0 0 0 7px #fff9;
+}
+.mensagem-final-selo {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 22px;
+    border: 1px solid #efc5d1;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff, #fbe5ec);
+    color: #a43d5f;
+    font-size: 25px;
+    box-shadow: 0 5px 16px #8b25451c;
+}
+.mensagem-final-legenda {
+    margin-bottom: 14px;
+    color: #a35b71 !important;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+.conteudo > .mensagem-final h2 {
+    max-width: 620px;
+    margin: 0 auto 25px;
+    font-size: clamp(29px, 5vw, 43px);
+}
+.conteudo > .mensagem-final p:not(.mensagem-final-legenda):not(.mensagem-final-fecho):not(.mensagem-final-assinatura) {
+    max-width: 650px;
+    margin: 0 auto 18px;
+    font-size: 17px;
+}
+.mensagem-final-fecho {
+    max-width: 600px;
+    margin: 28px auto 25px;
+    color: #963b5b !important;
+    font: italic 21px/1.7 Georgia, serif !important;
+}
+.mensagem-final-assinatura {
+    margin: 0 !important;
+    color: #956071 !important;
+    font: italic 16px/1.8 Georgia, serif !important;
+}
+.mensagem-final-assinatura span { color: #8f3553; font-weight: bold; }
+@media (max-width: 520px) {
+    .conteudo > .mensagem-final { margin-top: 44px; }
+    .conteudo > .mensagem-final p:not(.mensagem-final-legenda):not(.mensagem-final-fecho):not(.mensagem-final-assinatura) { font-size: 16px; }
+}
+.galeria > .mensagem::before,
+.conteudo > .mensagem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 56%;
+    height: 3px;
+    border-radius: 0 0 99px 99px;
+    background: linear-gradient(90deg, transparent, #e9a4b8, transparent);
+}
+.galeria > .mensagem h2,
+.conteudo > .mensagem h2 {
+    color: #8f3553;
+    font-family: Georgia, serif;
+    line-height: 1.4;
+}
+.galeria > .mensagem p,
+.conteudo > .mensagem p {
+    color: #76515d;
+    line-height: 1.9;
+}
+.polaroid {
+    border: 1px solid #f1dfe5;
+    background: linear-gradient(145deg, #fff 0%, #fff8fa 100%);
+    box-shadow: 0 10px 23px #4d1f3230, inset 0 1px 0 #fff;
+}
+.polaroid > span {
+    background: linear-gradient(145deg, #fff0f5, #f9dfe8);
+    box-shadow: inset 0 1px 0 #fff;
+}
+.polaroid:hover,
+.polaroid:focus-visible {
+    background: #fff;
+    outline-color: #d68ca4;
+    box-shadow: 0 18px 32px #4d1f3240, inset 0 1px 0 #fff;
+}
+@media (hover: hover) {
+    .galeria > .mensagem:hover,
+    .conteudo > .mensagem:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px #8b25451a, inset 0 1px 0 #fff;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .galeria > .mensagem,
+    .conteudo > .mensagem { transition: none; }
+}
+
+
+
+
