@@ -198,7 +198,7 @@ const motivos = [
     ["Seu sorriso", "Porque o seu sorriso ilumina meus dias e faz tudo ficar mais bonito."],
     ["seu cabelo", "porque seus cachinhos são a minha perdição e me fazem te amar cada vez mais."],
     ["Seu jeitinho", "Porque cada detalhe do seu jeitinho me faz me apaixonar por você de novo."],
-    ["seu olhar", "Porque sempre me deixa mais apaixonado a cada olhar."],
+    ["seu olhar", "Porque seus lindos olhos me fazem sentir que sou o mais sortudo do mundo."],
     ["seu rostinho", "porque adoro apertar ele, principalmente quando você fica com vergonha."],
     ["Seu abraço", "Porque seu abraço é o meu lugar favorito para descansar e esquecer do mundo."],
     ["Sua companhia", "Porque ter você por perto deixa a vida mais leve e o meu coração mais feliz."],
