@@ -64,14 +64,18 @@ playlistAudio.addEventListener("pause", () => {
 
 faixasPlaylist.forEach((faixa) => {
     faixa.addEventListener("click", async () => {
-        const mesmaFaixa = playlistAudio.src.endsWith(faixa.dataset.src);
+        // Resolva o caminho em relação à página. Assim funciona no domínio raiz
+        // e também em URLs do GitHub Pages com o nome do repositório na subpasta.
+        const urlFaixa = new URL(faixa.dataset.src, document.baseURI);
+        const mesmaFaixa = playlistAudio.currentSrc === urlFaixa.href ||
+            (playlistAudio.src && new URL(playlistAudio.src, document.baseURI).href === urlFaixa.href);
         if (mesmaFaixa && !playlistAudio.paused) {
             playlistAudio.pause();
             playlistStatus.textContent = `Pausado: ${faixa.dataset.title}`;
             return;
         }
 
-        if (!mesmaFaixa) playlistAudio.src = faixa.dataset.src;
+        if (!mesmaFaixa) playlistAudio.src = urlFaixa.href;
         faixaAtiva = faixa;
         faixasPlaylist.forEach((item) => {
             item.classList.toggle("tocando", item === faixa);

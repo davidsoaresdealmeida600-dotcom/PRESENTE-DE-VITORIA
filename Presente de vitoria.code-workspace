@@ -1,13 +1,15 @@
 {
 	"folders": [
 		{
+			"name": "Presente de vitoria",
 			"path": "."
 		},
 		{
+			"name": "quiz",
 			"path": "../quiz"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "quiz"
+		"liveServer.settings.multiRootWorkspaceName": "Presente de vitoria"
 	}
 }
